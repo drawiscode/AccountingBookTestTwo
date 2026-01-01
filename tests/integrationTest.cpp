@@ -116,9 +116,4 @@ TEST(IntegrationTest, QuerySalary_ThenYearlyStatistics_2025)
     EXPECT_TRUE(found);
 }
 
-/* ===== 必须补充的 main 函数 ===== */
-int main(int argc, char **argv)
-{
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
+

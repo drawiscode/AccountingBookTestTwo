@@ -1,6 +1,9 @@
-#include "statisticsmanager.h"
-#include <sstream>
+#include <vector>
+#include <string>
 #include <iomanip>
+#include <sstream>
+#include "statisticsmanager.h"
+#include "transaction.h"
 
 static std::string formatDouble(double value)
 {
