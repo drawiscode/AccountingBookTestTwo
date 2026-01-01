@@ -11,28 +11,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. 拉取代码
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      # 1. 拉取代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    # 2. 安装 C++ 编译环境
-    - name: Install build tools
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y g++
+      # 2. 安装 C++ 编译环境
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y g++
 
-    # 3. 编译并运行 GoogleTest 单元 / 集成测试
-   - name: Build and run tests
-     run: |
-        g++ -std=c++17 \
-          tests/integrationTest.cpp \
-          querymanager.cpp statisticsmanager.cpp transaction.cpp \
-          googletest-main/googletest/src/gtest-all.cc \
-          googletest-main/googletest/src/gtest_main.cc \
-          -I . \
-          -I googletest-main/googletest/include \
-          -I googletest-main/googletest \
-          -pthread \
-          -o runTests
-
-    ./runTests
+      # 3. 编译并运行 GoogleTest 单元 / 集成测试
+      - name: Build and run tests
+        run: |
+          g++ -std=c++17 \
+            tests/integrationTest.cpp \
+            querymanager.cpp statisticsmanager.cpp transaction.cpp \
+            googletest-main/googletest/src/gtest-all.cc \
+            googletest-main/googletest/src/gtest_main.cc \
+            -I . \
+            -I googletest-main/googletest/include \
+            -I googletest-main/googletest \
+            -pthread \
+            -o runTests
+          ./runTests
