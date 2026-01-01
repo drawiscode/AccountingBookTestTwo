@@ -25,13 +25,13 @@ jobs:
     - name: Build and run tests
       run: |
         g++ -std=c++17 \
-    tests/integrationTest.cpp \
-    querymanager.cpp statisticsmanager.cpp transaction.cpp  \
-    googletest-main/googletest/src/gtest-all.cc \
-    googletest-main/googletest/src/gtest_main.cc \
-    -I . \
-    -I googletest-main/googletest/include \
-    -I googletest-main/googletest \
-    -pthread \
-    -o runTests
+        tests/integrationTest.cpp \
+        querymanager.cpp statisticsmanager.cpp transaction.cpp  \
+        googletest-main/googletest/src/gtest-all.cc \
+        googletest-main/googletest/src/gtest_main.cc \
+        -I . \
+        -I googletest-main/googletest/include \
+        -I googletest-main/googletest \
+        -pthread \
+        -o runTests
 
