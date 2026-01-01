@@ -9,8 +9,7 @@ static std::string formatDouble(double value)
     return oss.str();
 }
 
-std::vector<std::vector<std::string>>
-StatisticsManager::calculateMonthlyTotal(const std::vector<Transaction>& transactions)
+std::vector<std::vector<std::string>> StatisticsManager::calculateMonthlyTotal(const std::vector<Transaction>& transactions)
 {
     std::map<std::string, std::pair<double, double>> totals;
 
@@ -37,8 +36,7 @@ StatisticsManager::calculateMonthlyTotal(const std::vector<Transaction>& transac
     return results;
 }
 
-std::vector<std::vector<std::string>>
-StatisticsManager::calculateYearlyTotal(const std::vector<Transaction>& transactions)
+std::vector<std::vector<std::string>> StatisticsManager::calculateYearlyTotal(const std::vector<Transaction>& transactions)
 {
     std::map<std::string, std::pair<double, double>> totals;
 
